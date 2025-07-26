@@ -1,9 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Show cute welcome message on load
+    const welcomeMsg = document.getElementById('welcome-message');
+    if (welcomeMsg) {
+        welcomeMsg.classList.remove('hidden');
+        setTimeout(() => {
+            welcomeMsg.classList.add('hidden');
+        }, 3000);
+    }
     // --- DOM Elements ---
     const characterGif = document.getElementById('character-gif');
     const micButton = document.getElementById('mic-button');
     const chatBox = document.getElementById('chat-box');
     const userInput = document.getElementById('user-input');
+    const characterSelect = document.getElementById('character-select');
 
     // --- API and State ---
     // IMPORTANT: Replace with your actual Google AI Studio API key
@@ -14,13 +23,32 @@ document.addEventListener('DOMContentLoaded', () => {
     let recognition;
 
     // --- Character States (GIFs) ---
-    const characterStates = {
-        idle: '4.webp',
-        listening: '5.webp',
-        speaking: '3.webp',
-        thinking: '2.webp',
-        error: '4.webp'
+    const characterSets = {
+        '1': {
+            idle: '4.webp',
+            listening: '5.webp',
+            speaking: '3.webp',
+            thinking: '2.webp',
+            error: '4.webp'
+        },
+        '2': {
+            idle: '9.webp',
+            listening: '10.webp',
+            speaking: '8.webp',
+            thinking: '6.webp',
+            error: '7.webp'
+        }
     };
+    let currentCharacter = '1';
+    let characterStates = characterSets[currentCharacter];
+    // --- Character Selection Event ---
+    if (characterSelect) {
+        characterSelect.addEventListener('change', (e) => {
+            currentCharacter = characterSelect.value;
+            characterStates = characterSets[currentCharacter];
+            setCharacterState('idle');
+        });
+    }
 
     // --- Speech Recognition Setup ---
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;

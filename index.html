@@ -10,10 +10,26 @@
 
     <div id="app-container">
         <div class="stars"></div>
+        <div id="welcome-message" class="cute-welcome hidden">
+            <span class="welcome-emoji">✨💖</span>
+            <span class="welcome-text">Welcome to AI Chat!<br>Choose your cute friend and start chatting! 🥰</span>
+        </div>
+        <div id="character-select-container" style="text-align:center; margin-top:18px;">
+            <label for="character-select" style="font-size:18px; font-family:'Comfortaa',sans-serif; color:#ec407a; margin-right:8px;">Choose Character:</label>
+            <select id="character-select" style="font-size:16px; border-radius:12px; padding:6px 12px; border:2px solid #f8bbd0; background:#fff5f7; color:#ec407a;">
+                <option value="1">🌸 Sakura</option>
+                <option value="2">🦄 Pari</option>
+            </select>
+        </div>
         <div id="character-container">
             <div class="character-bubble">
                 <img id="character-gif" src="4.webp" alt="Chat Character">
-                <div class="sparkles"></div>
+                <div class="sparkles">
+                    <span class="sparkle sparkle1">✨</span>
+                    <span class="sparkle sparkle2">💖</span>
+                    <span class="sparkle sparkle3">💫</span>
+                    <span class="sparkle sparkle4">💕</span>
+                </div>
             </div>
             <div id="loading-spinner" class="hidden"></div>
         </div>

@@ -1,3 +1,57 @@
+/* Cute Welcome Message */
+.cute-welcome {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #f8bbd0 0%, #e1f5fe 100%);
+    color: #ec407a;
+    border-radius: 24px;
+    box-shadow: 0 6px 24px rgba(244,143,177,0.15);
+    padding: 18px 32px;
+    font-size: 1.3rem;
+    font-family: 'Comfortaa', cursive, sans-serif;
+    z-index: 10;
+    text-align: center;
+    animation: popIn 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.cute-welcome .welcome-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+    animation: twinkle 2s infinite;
+}
+.hidden {
+    display: none !important;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* Sparkles and Hearts Animation */
+.sparkles {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+}
+.sparkle {
+    position: absolute;
+    font-size: 1.6rem;
+    opacity: 0.8;
+    animation: sparkle-move 2.5s infinite;
+}
+.sparkle1 { left: 10%; top: 10%; animation-delay: 0s; }
+.sparkle2 { right: 12%; top: 18%; animation-delay: 0.7s; }
+.sparkle3 { left: 18%; bottom: 10%; animation-delay: 1.2s; }
+.sparkle4 { right: 8%; bottom: 12%; animation-delay: 1.7s; }
+
+@keyframes sparkle-move {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    50% { transform: scale(1.3) rotate(20deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+}
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
 
 body {
