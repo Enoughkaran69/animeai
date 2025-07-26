@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Character Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <div class="stars"></div>
+        <div id="character-container">
+            <div class="character-bubble">
+                <img id="character-gif" src="4.webp" alt="Chat Character">
+                <div class="sparkles"></div>
+            </div>
+            <div id="loading-spinner" class="hidden"></div>
+        </div>
+
+        <div id="chat-container">
+            <div id="chat-box">
+                <!-- Chat messages will be appended here -->
+            </div>
+            <div id="input-container">
+                <input type="text" id="user-input" placeholder="Ask something..." disabled>
+                <button id="mic-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
