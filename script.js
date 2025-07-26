@@ -224,6 +224,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }
 
+    // --- Preload Character Images ---
+function preloadCharacterImages(characterSets) {
+    Object.values(characterSets).forEach(set => {
+        Object.values(set).forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    });
+}
+preloadCharacterImages(characterSets);
+
     // --- Initial State ---
     setCharacterState('idle');
     speak("Hello! I'm ready to chat. Just press the microphone button to talk to me.");
